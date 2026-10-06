@@ -1,0 +1,50 @@
+.auth-page {
+    width: min(440px, 100%);
+    min-height: auto;
+    padding: clamp(2rem, 6vw, 4rem);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-large);
+    background: var(--color-surface);
+}
+
+.auth-page h1 {
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.auth-form {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.auth-form label {
+    margin-top: 0.65rem;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 0.75rem 0.85rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-small);
+    color: var(--color-primary);
+    background: var(--color-background);
+    font: inherit;
+}
+
+.auth-form .button {
+    margin-top: 1rem;
+}
+
+.auth-page > p {
+    margin-top: 1.5rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.auth-page > p a {
+    color: var(--color-primary);
+    font-weight: 700;
+}

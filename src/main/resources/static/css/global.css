@@ -1,0 +1,217 @@
+:root {
+    --color-background: #F5F1E8;
+    --color-secondary: #A4AB89;
+    --color-primary: #303D19;
+    --color-primary-soft: #53633a;
+    --color-surface: #fbf9f3;
+    --color-border: #d4d8c1;
+    --color-muted: #66705a;
+    --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+    --font-display: Georgia, "Times New Roman", serif;
+    --content-width: 1120px;
+    --space-page: clamp(1.25rem, 4vw, 4rem);
+    --radius-small: 0.35rem;
+    --radius-large: 1rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    color: var(--color-primary);
+    background: var(--color-background);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+body,
+button,
+input {
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+p {
+    margin-top: 0;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 3px;
+}
+
+.site-header,
+.site-footer {
+    padding: 1.25rem var(--space-page);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+.site-header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.4rem 1.5rem;
+}
+
+.site-header nav a {
+    padding: 0.25rem 0;
+    color: var(--color-primary);
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.site-header nav a:hover,
+.site-header nav a[aria-current="page"] {
+    color: var(--color-primary-soft);
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.35rem;
+}
+
+.site-logo {
+    color: var(--color-primary);
+    font-family: var(--font-display);
+    font-size: clamp(1.35rem, 3vw, 1.7rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+main {
+    width: min(var(--content-width), calc(100% - (var(--space-page) * 2)));
+    min-height: 70vh;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 6rem) 0;
+}
+
+.site-footer {
+    border-top: 1px solid var(--color-border);
+    color: var(--color-muted);
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 2rem;
+    width: min(var(--content-width), 100%);
+    margin: 0 auto;
+}
+
+.footer-brand .site-logo {
+    display: inline-block;
+    margin-bottom: 0.75rem;
+}
+
+.footer-brand p,
+.footer-information p {
+    max-width: 28ch;
+    margin-bottom: 0;
+}
+
+.site-footer h2 {
+    margin-bottom: 0.75rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.footer-contact ul {
+    display: grid;
+    gap: 0.35rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.footer-contact span {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.footer-copyright {
+    width: min(var(--content-width), 100%);
+    padding-top: 2rem;
+    margin: 2rem auto 0;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-small);
+    color: var(--color-background);
+    background: var(--color-primary);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.button:hover {
+    color: var(--color-primary);
+    background: transparent;
+}
+
+@media (max-width: 620px) {
+    .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .site-header nav {
+        justify-content: flex-start;
+        gap: 0.25rem 1rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
