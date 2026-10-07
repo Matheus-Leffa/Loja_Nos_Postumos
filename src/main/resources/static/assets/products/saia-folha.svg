@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#A4AB89"/>
+  <path d="M250 180h300l55 190-35 420H230l-35-420z" fill="#F5F1E8" stroke="#303D19" stroke-width="10"/>
+  <path d="M210 380h380M225 460h350M220 540h360M215 620h370M210 700h380" stroke="#A4AB89" stroke-width="18"/>
+  <path d="M260 180h280" stroke="#303D19" stroke-width="18"/>
+  <text x="400" y="900" fill="#303D19" font-family="Georgia" font-size="42" text-anchor="middle">Saia Folha</text>
+</svg>

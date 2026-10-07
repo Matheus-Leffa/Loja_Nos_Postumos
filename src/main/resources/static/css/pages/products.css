@@ -4,17 +4,94 @@ main > h1 {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: clamp(1rem, 3vw, 2rem);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(1rem, 2.5vw, 2rem);
 }
 
-.product-grid:empty::before {
-    display: block;
-    grid-column: 1 / -1;
-    padding: 2rem;
-    border: 1px dashed var(--color-secondary);
+.product-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-large);
+    background: var(--color-surface);
+}
+
+.product-card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: var(--color-secondary);
+}
+
+.product-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.product-card-name {
+    margin-bottom: 0.5rem;
+    font-size: 1.55rem;
+}
+
+.product-card-description {
+    min-height: 3.2rem;
+    margin-bottom: 1rem;
     color: var(--color-muted);
-    content: "Em breve, nossas peças estarão disponíveis aqui.";
+    font-size: 0.9rem;
+}
+
+.product-card-price {
+    margin-bottom: 1.25rem;
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.product-card-actions {
+    display: grid;
+    gap: 0.65rem;
+    margin-top: auto;
+}
+
+.product-card-actions .button {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.85rem;
     text-align: center;
+}
+
+.button-secondary {
+    color: var(--color-primary);
+    background: transparent;
+}
+
+.button-secondary:hover {
+    color: var(--color-background);
+    background: var(--color-primary);
+}
+
+@media (max-width: 980px) {
+    .product-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card-image {
+        aspect-ratio: 5 / 4;
+    }
 }

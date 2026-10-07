@@ -108,12 +108,30 @@ input:focus-visible {
 }
 
 .site-logo {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.15rem;
     color: var(--color-primary);
-    font-family: var(--font-display);
-    font-size: clamp(1.35rem, 3vw, 1.7rem);
     font-weight: 700;
-    letter-spacing: 0.02em;
     text-decoration: none;
+}
+
+.site-logo-image {
+    display: block;
+    width: clamp(12rem, 22vw, 15.5rem);
+    height: auto;
+}
+
+.site-logo-credit {
+    align-self: center;
+    color: var(--color-primary);
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-align: center;
 }
 
 main {

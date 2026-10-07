@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
+  <rect width="800" height="1000" fill="#D8D9C8"/>
+  <path d="M235 230l125-70 40 70 40-70 125 70 85 250-100 35-25 285H275l-25-285-100-35z" fill="#F5F1E8" stroke="#303D19" stroke-width="10"/>
+  <path d="M400 230v570M265 330h270M250 420h300M265 510h270" stroke="#A4AB89" stroke-width="16"/>
+  <text x="400" y="900" fill="#303D19" font-family="Georgia" font-size="42" text-anchor="middle">Casaco Brisa</text>
+</svg>
