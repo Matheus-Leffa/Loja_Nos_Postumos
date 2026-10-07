@@ -27,6 +27,35 @@
         <section class="product-grid" aria-label="Lista de produtos"></section>
     </main>
 
+    <div class="modal-backdrop" data-measurements-modal hidden>
+        <section
+            class="measurements-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="measurements-modal-title"
+            tabindex="-1"
+        >
+            <div class="measurements-modal-header">
+                <h2 id="measurements-modal-title">Medidas do produto</h2>
+                <button class="modal-close-button" type="button" aria-label="Fechar medidas">&times;</button>
+            </div>
+            <p class="measurements-modal-description">Confira as medidas disponíveis para cada tamanho.</p>
+            <div class="measurements-table-wrapper">
+                <table class="measurements-table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Medida</th>
+                            <th scope="col">P</th>
+                            <th scope="col">M</th>
+                            <th scope="col">G</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+
     <script src="../js/pages/products.js"></script>
 </body>
 </html>
