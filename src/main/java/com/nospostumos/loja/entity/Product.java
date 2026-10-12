@@ -50,7 +50,7 @@ public class Product {
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<ProductMeasurement> measurements = new HashSet<>();
 
-    protected Product() {
+    public Product() {
     }
 
     @PrePersist
