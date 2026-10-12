@@ -9,11 +9,22 @@ public class LojaApplication {
 
     public static void main(String[] args) {
 
-        Dotenv dotenv = Dotenv.load();
+        Dotenv dotenv = Dotenv.configure()
+                .ignoreIfMissing()
+                .load();
 
-        System.setProperty("DB_USERNAME", dotenv.get("DB_USERNAME"));
-        System.setProperty("DB_PASSWORD", dotenv.get("DB_PASSWORD"));
+        setSystemPropertyFromDotenv(dotenv, "DB_URL");
+        setSystemPropertyFromDotenv(dotenv, "DB_USERNAME");
+        setSystemPropertyFromDotenv(dotenv, "DB_PASSWORD");
 
         SpringApplication.run(LojaApplication.class, args);
+    }
+
+    private static void setSystemPropertyFromDotenv(Dotenv dotenv, String propertyName) {
+        String value = dotenv.get(propertyName);
+
+        if (value != null && !value.isBlank() && System.getProperty(propertyName) == null) {
+            System.setProperty(propertyName, value);
+        }
     }
 }
