@@ -7,11 +7,15 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.Table;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -42,6 +46,9 @@ public class Product {
 
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ProductMeasurement> measurements = new HashSet<>();
 
     protected Product() {
     }
@@ -99,5 +106,19 @@ public class Product {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+
+    public Set<ProductMeasurement> getMeasurements() {
+        return measurements;
+    }
+
+    public void addMeasurement(ProductMeasurement measurement) {
+        measurements.add(measurement);
+        measurement.setProduct(this);
+    }
+
+    public void removeMeasurement(ProductMeasurement measurement) {
+        measurements.remove(measurement);
+        measurement.setProduct(null);
     }
 }
