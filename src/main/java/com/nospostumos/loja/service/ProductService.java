@@ -50,6 +50,12 @@ public class ProductService {
     }
 
     @Transactional
+    public ProductResponse findPublicById(Long id) {
+        return toResponse(productRepository.findByIdAndActiveTrue(Objects.requireNonNull(id, "id não pode ser nulo"))
+                .orElseThrow(() -> new ProductNotFoundException(id)));
+    }
+
+    @Transactional
     public ProductResponse update(Long id, ProductUpdateRequest request) {
         validateProductData(request.name(), request.description(), request.price());
 
